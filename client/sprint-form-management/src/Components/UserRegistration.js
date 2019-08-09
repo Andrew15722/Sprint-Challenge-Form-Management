@@ -3,15 +3,15 @@ import axios from 'axios';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
 
-const UserRegister = ({}) => {
+const UserRegister = ({ errors, touched }) => {
 	return (
 		<div className="user-form">
 			<h1 className="user-form-h1">Register</h1>
 			<Form>
-				{/* {touched.username && errors.username && <p className="error">{errors.username}</p>} */}
+				{touched.username && errors.username && <p className="error">{errors.username}</p>}
 				<Field className="form-input" type="text" name="username" placeholder="username" />
 
-				{/* {touched.password && errors.password && <p className="error">{errors.password}</p>} */}
+				{touched.password && errors.password && <p className="error">{errors.password}</p>}
 				<Field className="form-input" type="password" name="password" placeholder="password" />
 
 				<button type="submit">Submit</button>
